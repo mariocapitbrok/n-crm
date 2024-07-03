@@ -9,7 +9,7 @@ const config: Config = {
   theme: {
     extend: {},
   },
-  plugins: [require('daisyui')],
+  plugins: [require('daisyui'), require('@tailwindcss/typography')],
   // daisyUI config. https://daisyui.com/docs/config/
   daisyui: {
     themes: false, // false: only light + dark | true: all themes | array: specific themes like this ["light", "dark", "cupcake"]
