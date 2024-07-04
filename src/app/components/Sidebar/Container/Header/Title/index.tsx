@@ -1,8 +1,8 @@
 interface Props {
-  isOpen: boolean;
+  isOpen?: boolean;
 }
 
-const Title = ({ isOpen }: Props) => (
+const Title = ({ isOpen = true }: Props) => (
   <span className={`${isOpen ? 'block' : 'hidden'} text-xl font-bold`}>
     Admin
   </span>
