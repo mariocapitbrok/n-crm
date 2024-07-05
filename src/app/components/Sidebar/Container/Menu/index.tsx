@@ -1,16 +1,17 @@
 // Menu.tsx
 import MainLink from './MainLink';
 import {
-  faTachometerAlt,
-  faNewspaper,
-  faPhotoVideo,
-  faFileAlt,
-  faComments,
-  faBrush,
-  faPlug,
-  faUsers,
-  faTools,
-  faCog,
+  faTachometerAlt, // Dashboard
+  faBullhorn, // Marketing
+  faChartLine, // Sales
+  faBoxes, // Inventory
+  faLifeRing, // Support
+  faProjectDiagram, // Projects
+  faTools, // Tools
+  faEnvelope, // Mail Manager
+  faFileAlt, // Documents
+  faStore, // Extension Store
+  faCog, // Settings
 } from '@fortawesome/free-solid-svg-icons';
 
 interface MenuProps {
@@ -19,7 +20,7 @@ interface MenuProps {
 
 const Menu = ({ isOpen }: MenuProps) => {
   return (
-    <ul className="menu p-4 w-full">
+    <ul className="menu p-0 w-full">
       <MainLink
         href="/dashboard"
         icon={faTachometerAlt}
@@ -27,33 +28,55 @@ const Menu = ({ isOpen }: MenuProps) => {
         isOpen={isOpen}
       />
       <MainLink
-        href="/posts"
-        icon={faNewspaper}
-        label="Posts"
+        href="/marketing"
+        icon={faBullhorn}
+        label="Marketing"
         isOpen={isOpen}
       />
       <MainLink
-        href="/media"
-        icon={faPhotoVideo}
-        label="Media"
-        isOpen={isOpen}
-      />
-      <MainLink href="/pages" icon={faFileAlt} label="Pages" isOpen={isOpen} />
-      <MainLink
-        href="/comments"
-        icon={faComments}
-        label="Comments"
+        href="/sales"
+        icon={faChartLine}
+        label="Sales"
         isOpen={isOpen}
       />
       <MainLink
-        href="/appearance"
-        icon={faBrush}
-        label="Appearance"
+        href="/inventory"
+        icon={faBoxes}
+        label="Inventory"
         isOpen={isOpen}
       />
-      <MainLink href="/plugins" icon={faPlug} label="Plugins" isOpen={isOpen} />
-      <MainLink href="/users" icon={faUsers} label="Users" isOpen={isOpen} />
+      <MainLink
+        href="/support"
+        icon={faLifeRing}
+        label="Support"
+        isOpen={isOpen}
+      />
+      <MainLink
+        href="/projects"
+        icon={faProjectDiagram}
+        label="Projects"
+        isOpen={isOpen}
+      />
       <MainLink href="/tools" icon={faTools} label="Tools" isOpen={isOpen} />
+      <hr className="my-2 border-t border-gray-300" />
+      <MainLink
+        href="/mail-manager"
+        icon={faEnvelope}
+        label="Mail Manager"
+        isOpen={isOpen}
+      />
+      <MainLink
+        href="/documents"
+        icon={faFileAlt}
+        label="Documents"
+        isOpen={isOpen}
+      />
+      <MainLink
+        href="/extension-store"
+        icon={faStore}
+        label="Extension Store"
+        isOpen={isOpen}
+      />
       <MainLink
         href="/settings"
         icon={faCog}

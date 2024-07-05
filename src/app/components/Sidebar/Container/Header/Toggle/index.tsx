@@ -7,7 +7,7 @@ interface ToggleProps {
 
 const Toggle = ({ toggleSidebar }: ToggleProps) => (
   <button onClick={toggleSidebar} className="btn btn-ghost">
-    <FontAwesomeIcon icon={faBars} className="w-6 h-6" />
+    <FontAwesomeIcon icon={faBars} className="w-5 h-7" />
   </button>
 );
 

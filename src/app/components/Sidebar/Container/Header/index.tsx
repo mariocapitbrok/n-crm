@@ -7,7 +7,7 @@ interface Props {
 }
 
 const Header = ({ isOpen, toogleSidebar }: Props) => (
-  <div className="flex items-center justify-start p-4">
+  <div className="flex items-center justify-start ">
     <Toggle toggleSidebar={toogleSidebar} />
     <Title isOpen={isOpen} />
   </div>
