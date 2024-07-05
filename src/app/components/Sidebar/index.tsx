@@ -6,7 +6,7 @@ import Container from './Container';
 import Header from './Container/Header';
 
 const Sidebar = () => {
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
     <Container isOpen={isOpen}>
