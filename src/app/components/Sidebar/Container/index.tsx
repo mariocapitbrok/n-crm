@@ -8,7 +8,7 @@ interface Props {
 const Container = ({ isOpen, children }: Props) => (
   <div
     className={`flex ${
-      isOpen ? 'w-64' : 'w-12'
+      isOpen ? 'w-64' : 'w-12 h-12 md:h-screen'
     } bg-base-200 h-screen transition-width duration-300`}
   >
     <div className="flex flex-col w-full">{children}</div>
