@@ -16,7 +16,7 @@ const MainLink: FC<MainLinkProps> = ({ href, icon, label, isOpen }) => {
     <li>
       <Link href={href} legacyBehavior>
         <a className="flex items-center">
-          <FontAwesomeIcon icon={icon} className="w-5 h-5" />
+          <FontAwesomeIcon icon={icon} className="w-4 h-5" />
           <span className={`${isOpen ? 'ml-4' : 'hidden'}`}>{label}</span>
         </a>
       </Link>
