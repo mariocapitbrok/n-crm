@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import { ReactNode, useMemo } from 'react';
 
 interface Props {
   isOpen: boolean;
@@ -6,18 +6,13 @@ interface Props {
 }
 
 const Container = ({ isOpen, children }: Props) => {
-  const md = `md:h-screen`;
+  const containerClass = useMemo(() => {
+    const base =
+      'SidebarContainer absolute top-0 left-0 bg-base-200 h-screen transition-width duration-100';
+    return isOpen ? `${base} w-64` : `${base} w-12 h-12 md:h-screen`;
+  }, [isOpen]);
 
-  const styles = function () {
-    const name = 'SidebarContainer';
-    const open = `${name} w-64`;
-    const closed = `${name} w-12 h-12 ${md}`;
-    const rest = `absolute top-0 left-0 bg-base-200 h-screen transition-width duration-100`;
-
-    return `${isOpen ? open : closed} ${rest}`;
-  };
-
-  return <div className={styles()}>{children}</div>;
+  return <div className={containerClass}>{children}</div>;
 };
 
 export default Container;
