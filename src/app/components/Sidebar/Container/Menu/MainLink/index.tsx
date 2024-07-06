@@ -12,7 +12,7 @@ export interface MainLinkProps {
 }
 
 const MainLink: FC<MainLinkProps> = ({ href, icon, label, isOpen }) => {
-  const md = ['flex', 'w-4', 'h-5'].map((c) => `md:${c}`).join(' ');
+  const md = `flex w-4 h-5`;
 
   return (
     <li>
