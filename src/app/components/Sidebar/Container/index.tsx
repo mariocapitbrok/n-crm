@@ -6,13 +6,13 @@ interface Props {
 }
 
 const Container = ({ isOpen, children }: Props) => {
-  const md = `h-screen`;
+  const md = `md:h-screen`;
 
   const styles = function () {
     const name = 'SidebarContainer';
-    const open = `${name} absolute top-0 left-0 w-64`;
+    const open = `${name} w-64`;
     const closed = `${name} w-12 h-12 ${md}`;
-    const rest = `bg-base-200 h-screen transition-width duration-300`;
+    const rest = `absolute top-0 left-0 bg-base-200 h-screen transition-width duration-100`;
 
     return `${isOpen ? open : closed} ${rest}`;
   };

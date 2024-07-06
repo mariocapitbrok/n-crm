@@ -12,17 +12,32 @@ export interface MainLinkProps {
 }
 
 const MainLink: FC<MainLinkProps> = ({ href, icon, label, isOpen }) => {
-  const md = `flex w-4 h-5`;
+  const md = `md:flex md:w-4 md:h-5`;
+
+  const iconStyles = function () {
+    const name = 'mainlink-icon';
+    const open = `${name} w-4 h-5`;
+    const closed = `${name} hidden ${md}`;
+    const rest = ``;
+
+    return `${isOpen ? open : closed} ${rest}`;
+  };
+
+  const labelStyles = function () {
+    const name = 'mainlink-label';
+    const open = `${name} ml-4 `;
+    const closed = `${name} hidden`;
+    const rest = ``;
+
+    return `${isOpen ? open : closed} ${rest}`;
+  };
 
   return (
     <li>
       <Link href={href} legacyBehavior>
         <a className="flex items-center">
-          <FontAwesomeIcon
-            icon={icon}
-            className={`${isOpen ? 'w-4 h-5' : `hidden ${md}`}`}
-          />
-          <span className={`${isOpen ? 'ml-4' : 'hidden'}`}>{label}</span>
+          <FontAwesomeIcon icon={icon} className={iconStyles()} />
+          <span className={labelStyles()}>{label}</span>
         </a>
       </Link>
     </li>
